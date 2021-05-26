@@ -1,9 +1,6 @@
 # Insta Clone Backend
 
-<br>
-
 ## Function
-<br>
 
 ### User
 - [X] Create Account
@@ -12,5 +9,3 @@
 - [ ] Edit Profile
 
 <br>
-
----------------------
