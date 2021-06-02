@@ -3,9 +3,5 @@ import { loadFilesSync,mergeResolvers,mergeTypeDefs,makeExecutableSchema } from 
 const loadedTypeDefs = loadFilesSync(`${__dirname}/gql/**/*.typeDefs.js`)
 const loadedResolvers = loadFilesSync(`${__dirname}/gql/**/*.resolvers.js`)
 
-const typeDefs = mergeTypeDefs(loadedTypeDefs)
-const resolvers = mergeResolvers(loadedResolvers)
-
-const schema = makeExecutableSchema({typeDefs, resolvers})
-
-export default schema
+export const typeDefs = mergeTypeDefs(loadedTypeDefs)
+export const resolvers = mergeResolvers(loadedResolvers)

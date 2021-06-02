@@ -17,3 +17,13 @@ export const getUser = async (token) => {
         return null;
     }
 }
+
+export const protectedResolver = (ourResolver) => (root, args, context, info) => {
+    if(!context.loggedInUser){
+        return {
+            ok: false,
+            error: "You need to login first."
+        }
+    }
+    return ourResolver(root, args, context, info);
+}
