@@ -2,7 +2,7 @@ import client from "../../../client"
 import bcrypt from "bcrypt"
 
 export default {
-    Mutation : {
+    Mutation: {
         createAccount: async (_, {
             firstName, 
             lastName,
@@ -22,7 +22,7 @@ export default {
                 });
     
                 if(existingUser){
-                    return new Error("This username/password is already token.")
+                    throw new Error("This username/password is already token.")
                 }
                 const uglyPassword = await bcrypt.hash(password, 10);
                 await client.user.create({
@@ -36,12 +36,12 @@ export default {
                 });
                 return {
                     ok: true
-                }
+                };
             } catch(e) {
                 return {
                     ok: false,
                     error: "Can't create account."
-                }
+                };
             }
         }
     }
