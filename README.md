@@ -8,5 +8,7 @@
 - [X] Login
 - [X] Edit Profile
 - [X] Change Avatar
+- [X] Follow User
+- [X] Unfollow User
 
 <br>
