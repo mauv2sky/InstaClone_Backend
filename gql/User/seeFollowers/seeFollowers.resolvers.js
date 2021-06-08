@@ -13,6 +13,7 @@ export default {
                     error: "User not found."
                 }
             }
+            // use offset pagination
             const followers = await client.user
                 .findUnique({
                     where: {
