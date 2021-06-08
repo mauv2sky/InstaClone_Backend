@@ -10,5 +10,9 @@
 - [X] Change Avatar
 - [X] Follow User
 - [X] Unfollow User
+- [x] See Followers
+- [x] See Following
+- [x] Computed Fields
+- [x] Search Users
 
 <br>
