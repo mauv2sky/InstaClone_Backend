@@ -29,6 +29,7 @@
     "upgrade": "^1.1.0"
   },
   "devDependencies": {
+    "prettier-plugin-prisma": "^0.11.1",
     "prisma": "^2.21.2"
   },
   "resolutions": {
