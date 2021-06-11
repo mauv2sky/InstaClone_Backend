@@ -1,6 +1,5 @@
 # Insta clone Backend
-## Document - User
-<br>
+## Document
 
 ### User
 - [X] Create Account [▶️](####Create-Account)
