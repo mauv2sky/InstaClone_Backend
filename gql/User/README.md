@@ -2,15 +2,15 @@
 ## Document
 
 ### User
-- [X] Create Account [▶️](####Create-Account)
-- [X] Login [▶️](####Login)
-- [X] See Profile [▶️](####See-Profile)
-- [X] Edit Profile [▶️](####Edit-Profile)
-- [X] Follow User [▶️](####Follow-User)
-- [X] Unfollow User [▶️](####Unfollow-User)
-- [x] See Followers [▶️](####See-Followers)
-- [x] See Followings [▶️](####See-Followings)
-- [x] Search User [▶️](####Search-User)
+- [X] Create Account [▶️](#Create-Account)
+- [X] Login [▶️](#Login)
+- [X] See Profile [▶️](#See-Profile)
+- [X] Edit Profile [▶️](#Edit-Profile)
+- [X] Follow User [▶️](#Follow-User)
+- [X] Unfollow User [▶️](#Unfollow-User)
+- [x] See Followers [▶️](#See-Followers)
+- [x] See Followings [▶️](#See-Followings)
+- [x] Search User [▶️](#Search-User)
 - [x] Computed Fields
 
 <br>
