@@ -2,32 +2,32 @@ import client from "../../client"
 
 export default {
     User: {
-        totalFollowing: ({id}) => {
+        totalFollowing: ({ id }) => {
             return client.user.count({
                 where: {
                     follower: {
-                        some: {id}
+                        some: { id }
                     }
                 }
             })
         },
-        totalFollower: ({id}) => {
+        totalFollower: ({ id }) => {
             return client.user.count({
                 where: {
                     following: {
-                        some: {id}
+                        some: { id }
                     }
                 }
             })
         },
-        isMe: ({id}, _, {loggedInUser}) => {
-            if(!loggedInUser){
+        isMe: ({ id }, _, { loggedInUser }) => {
+            if (!loggedInUser) {
                 return false;
             }
             return id === loggedInUser.id;
         },
-        isFollowing: async ({id}, _, {loggedInUser}) => {
-            if(!loggedInUser){
+        isFollowing: async ({ id }, _, { loggedInUser }) => {
+            if (!loggedInUser) {
                 return false;
             }
             const exist = await client.user
@@ -40,6 +40,11 @@ export default {
                     },
                 })
             return Boolean(exist);
-        }
+        },
+        photos: ({ id }) => client.user.findUnique({
+            where: {
+                id
+            }
+        }).photos()
     }
 }
