@@ -1,6 +1,6 @@
 import client from "../../../client";
 import { protectedResolver } from "../../user/users.utils";
-import { processPhoto } from "../photo.utils";
+import { processHashtags } from "../photo.utils";
 
 export default {
     Mutation: {
