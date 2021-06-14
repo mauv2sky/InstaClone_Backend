@@ -2,29 +2,14 @@ import client from "../../../client"
 
 export default {
     Query: {
-        seeFollowings: async (_, {userName, lastId}) => {
-            const ok = await client.user.findUnique({
-                where: {userName},
-                select: {id: true}
-            });
-            if(!ok){
-                return {
-                    ok: false,
-                    error: "User not found."
-                }
-            }
+        seeFollowings: (_, { userName, lastId }) =>
             // use cursor based pagination
-            const followings = await client.user
-                .findUnique({ where: {userName} })
+            client.user
+                .findUnique({ where: { userName } })
                 .following({
                     take: 5,
-                    skip: lastId ? 1: 0,
-                    ...(lastId && {cursor: {id: lastId}})
-                });
-            return {
-                ok: true,
-                followings
-            }
-        }
+                    skip: lastId ? 1 : 0,
+                    ...(lastId && { cursor: { id: lastId } })
+                })
     }
 }
