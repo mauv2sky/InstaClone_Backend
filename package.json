@@ -16,6 +16,7 @@
     "@babel/core": "^7.14.0",
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.14.0",
+    "@paljs/plugins": "^3.3.3",
     "@prisma/client": "^2.21.2",
     "apollo-server": "^2.24.0",
     "apollo-server-express": "^2.25.0",
