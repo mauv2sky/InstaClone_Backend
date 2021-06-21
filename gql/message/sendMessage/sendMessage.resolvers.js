@@ -1,4 +1,6 @@
 import client from "../../../client";
+import { NEW_MESSAGE } from "../../../constants";
+import pubSub from "../../../pubSub";
 import { protectedResolver } from "../../user/users.utils";
 
 export default {
@@ -22,10 +24,12 @@ export default {
                 } else {
                     room = await client.room.create({
                         data: {
-                            connect: [
-                                { id: userId },
-                                { id: loggedInUser.id }
-                            ]
+                            users: {
+                                connect: [
+                                    { id: userId },
+                                    { id: loggedInUser.id }
+                                ]
+                            }
                         }
                     })
                 }
@@ -45,12 +49,12 @@ export default {
                     }
                 }
             }
-            const newMessage = await client.message.create({
+            const message = await client.message.create({
                 data: {
                     payload,
                     room: {
                         connect: {
-                            id: roomId
+                            id: room.id
                         }
                     },
                     user: {
@@ -60,6 +64,7 @@ export default {
                     }
                 }
             })
+            pubSub.publish(NEW_MESSAGE, { roomUpdates: { ...message } });
             return {
                 ok: true
             }
