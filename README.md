@@ -16,3 +16,15 @@
 - [x] Search Users
 
 <br>
+
+### Photos
+- [x] Upload Photo (Parse #)
+- [x] See Photo
+- [x] See Hashtag
+- [x] Search Photos
+- [x] Edit Photo
+- [x] Like / Unlike Photo
+- [x] See Photo Likes
+- [x] See Feed
+- [x] See Photo Comments
+- [x] Delete Photo
