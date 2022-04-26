@@ -1,5 +1,5 @@
-import client from "../../../client";
-import { protectedResolver } from "../../user/users.utils";
+import client from '../../../client';
+import { protectedResolver } from '../../user/users.utils';
 
 export default {
     Mutation: {
@@ -7,41 +7,39 @@ export default {
             const message = await client.message.findFirst({
                 where: {
                     id,
-                    user: {
-                        id: {
-                            not: loggedInUser.id
-                        }
+                    userId: {
+                        not: loggedInUser.id,
                     },
                     room: {
-                        user: {
+                        users: {
                             some: {
-                                id: loggedInUser.id
-                            }
-                        }
-                    }
+                                id: loggedInUser.id,
+                            },
+                        },
+                    },
                 },
                 select: {
-                    id: true
-                }
+                    id: true,
+                },
             });
             if (!message) {
                 return {
                     ok: false,
-                    error: "message not found."
-                }
+                    error: 'message not found.',
+                };
             } else {
                 await client.message.update({
                     where: {
-                        id
+                        id,
                     },
                     data: {
-                        read: true
-                    }
-                })
+                        read: true,
+                    },
+                });
             }
             return {
-                ok: true
-            }
-        })
-    }
-}
+                ok: true,
+            };
+        }),
+    },
+};
