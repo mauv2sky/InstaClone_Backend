@@ -1,9 +1,13 @@
-import { gql } from "apollo-server";
+import { gql } from 'apollo-server';
 
 export default gql`
-    type Query {
-        seePhoto(
-            id: Int!
-        ): Photo
+    type seePhotoResult {
+        ok: Boolean!
+        error: String
+        photo: Photo
     }
-`
+
+    type Query {
+        seePhoto(id: Int!): seePhotoResult!
+    }
+`;

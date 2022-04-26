@@ -1,17 +1,27 @@
-import client from "../../../client"
+import client from '../../../client';
 
 export default {
     Query: {
         seePhotoLikes: async (_, { id }) => {
             const likes = await client.like.findMany({
                 where: {
-                    photoId: id
+                    photoId: id,
                 },
                 select: {
-                    user: true
-                }
+                    user: true,
+                },
             });
-            return likes.map((like) => like.user);
-        }
-    }
-}
+
+            if (!likes) {
+                return {
+                    ok: false,
+                    error: 'likes not exist.',
+                };
+            }
+            return {
+                ok: true,
+                users: likes.map((like) => like.user),
+            };
+        },
+    },
+};

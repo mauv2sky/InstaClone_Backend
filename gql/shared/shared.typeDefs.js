@@ -1,9 +1,9 @@
-import { gql } from "apollo-server-express";
+import { gql } from 'apollo-server-express';
 
 export default gql`
-    scalar Upload, 
+    scalar Upload
     type MutationResult {
         ok: Boolean!
         error: String
     }
-`
+`;

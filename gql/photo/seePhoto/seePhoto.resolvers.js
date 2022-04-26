@@ -1,13 +1,25 @@
-import client from "../../../client"
+import client from '../../../client';
 
 export default {
     Query: {
         seePhoto: (_, { id }) => {
-            return client.photo.findUnique({
+            let photo = client.photo.findUnique({
                 where: {
-                    id
-                }
-            })
-        }
-    }
-}
+                    id,
+                },
+            });
+
+            if (!photo) {
+                return {
+                    ok: false,
+                    error: 'Photo not found.',
+                };
+            }
+
+            return {
+                ok: true,
+                photo,
+            };
+        },
+    },
+};

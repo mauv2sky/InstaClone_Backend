@@ -1,7 +1,12 @@
 import { gql } from "apollo-server";
 
-export default `
+export default gql`
+    type searchUserResult {
+        ok: Boolean!
+        error: String
+        matchUser: [User]
+    }
     type Query {
-        searchUser(keyword: String!): [User]
+        searchUser(keyword: String!): searchUserResult!
     }
 `
