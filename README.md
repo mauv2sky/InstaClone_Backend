@@ -1,14 +1,14 @@
-# Insta Clone Backend
+# Instagram Clone : Backend
 
-> -   NodeJs, Express
+> -   NodeJS, Express
 > -   GraphQL, Apollo, Prisma
 > -   http, webSocket
 
 <br>
 
-## Function
+## Functions
 
-### User
+### [User](https://github.com/mauv2sky/InstaClone_Backend/tree/main/gql/User#Create-Account)
 
 -   [x] Create Account
 -   [x] See Profile
@@ -22,9 +22,7 @@
 -   [x] Computed Fields
 -   [x] Search Users
 
-<br>
-
-### Photos
+### [Photo](https://github.com/mauv2sky/InstaClone_Backend/tree/main/gql/photo)
 
 -   [x] Upload Photo (S3)
 -   [x] See Photo
@@ -40,9 +38,7 @@
 -   [x] See Photo Comments
 -   [x] See Hashtag
 
- <br>
-
-### Message
+### [Message](https://github.com/mauv2sky/InstaClone_Backend/tree/main/gql/message)
 
 -   [x] Send Message
 -   [x] See Rooms
@@ -57,7 +53,7 @@
 
 ```
 📦INSTACLONE_BACKEND
- ┣ 📂gql                    // 기능별 typeDefs, resolver
+ ┣ 📂gql                    // 기능별 typeDefs, resolvers
  ┣ 📂prisma                 // 스키마 생성 및 마이그래이션 관리
  ┣ 📜client.js              // apollo client 생성
  ┣ 📜constants.js           // 상수 관리
