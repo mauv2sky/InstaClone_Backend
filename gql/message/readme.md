@@ -10,7 +10,8 @@
 -   [x] Room Update [▶️](#Room-Update)
 -   [x] Read Message [▶️](#Read-Message)
 -   [x] Delete Message [▶️](#Delete-Message)
--   ++ Folder Tree [▶️](#Folder-Tree)
+
+🌳 Folder Tree [▶️](#Folder-Tree)
 
 <br>
 

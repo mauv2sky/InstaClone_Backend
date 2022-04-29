@@ -17,7 +17,8 @@
 -   [x] Delete Comment [▶️](#Delete-Comment)
 -   [x] See Photo Comments [▶️](#See-Photo-Comments)
 -   [x] See Hashtag [▶️](#See-Hashtag)
--   ++ Folder Tree [▶️](#Folder-Tree)
+
+🌳 Folder Tree [▶️](#Folder-Tree)
 
 <br>
 
