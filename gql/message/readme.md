@@ -10,6 +10,7 @@
 -   [x] Room Update [▶️](#Room-Update)
 -   [x] Read Message [▶️](#Read-Message)
 -   [x] Delete Message [▶️](#Delete-Message)
+-   ++ Folder Tree [▶️](#Folder-Tree)
 
 <br>
 
@@ -303,4 +304,22 @@ Fail
         }
     }
 }
+```
+
+<br>
+
+---
+
+## Folder Tree
+
+```
+📂message
+┣ 📂deleteMessage
+┣ 📂readMessage
+┣ 📂roomUpdates
+┣ 📂seeRoom
+┣ 📂seeRooms
+┣ 📂sendMessage
+┣ 📜message.resolvers.js
+┗ 📜message.typeDefs.js
 ```

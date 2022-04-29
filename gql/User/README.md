@@ -1,17 +1,20 @@
 # Insta clone Backend
+
 ## Document
 
 ### User
-- [X] Create Account [▶️](#Create-Account)
-- [X] Login [▶️](#Login)
-- [X] See Profile [▶️](#See-Profile)
-- [X] Edit Profile [▶️](#Edit-Profile)
-- [X] Follow User [▶️](#Follow-User)
-- [X] Unfollow User [▶️](#Unfollow-User)
-- [x] See Followers [▶️](#See-Followers)
-- [x] See Followings [▶️](#See-Followings)
-- [x] Search User [▶️](#Search-User)
-- [x] Computed Fields
+
+-   [x] Create Account [▶️](#Create-Account)
+-   [x] Login [▶️](#Login)
+-   [x] See Profile [▶️](#See-Profile)
+-   [x] Edit Profile [▶️](#Edit-Profile)
+-   [x] Follow User [▶️](#Follow-User)
+-   [x] Unfollow User [▶️](#Unfollow-User)
+-   [x] See Followers [▶️](#See-Followers)
+-   [x] See Followings [▶️](#See-Followings)
+-   [x] Search User [▶️](#Search-User)
+-   [x] Computed Fields
+-   ++ Folder Tree [▶️](#Folder-Tree)
 
 <br>
 
@@ -19,22 +22,22 @@
 
 1️⃣ Parameter
 
-| Name | Type | Required |
-| :----: | ---- | :-------: |
-| firstName | String | ✔️ |
-| lastName | String | - |
-| userName | String | ✔️ |
-| email | String | ✔️ |
-| password | String | ✔️ |
+|   Name    | Type   | Required |
+| :-------: | ------ | :------: |
+| firstName | String |    ✔️    |
+| lastName  | String |    -     |
+| userName  | String |    ✔️    |
+|   email   | String |    ✔️    |
+| password  | String |    ✔️    |
 
 <br>
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :----: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
+| Name  |  Type   |       Description        | Required |
+| :---: | :-----: | :----------------------: | :------: |
+|  ok   | Boolean |  check success or fail   |    ✔️    |
+| error | String  | message in case of error |    -     |
 
 <br>
 
@@ -53,6 +56,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -63,6 +67,7 @@ Fail
     }
 }
 ```
+
 <br>
 
 #### Login
@@ -77,11 +82,11 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-----: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
-| token | String | token to identify user | - |
+| Name  |  Type   |       Description        | Required |
+| :---: | :-----: | :----------------------: | :------: |
+|  ok   | Boolean |  check success or fail   |    ✔️    |
+| error | String  | message in case of error |    -     |
+| token | String  |  token to identify user  |    -     |
 
 <br>
 
@@ -101,18 +106,20 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
         "login" : {
             "ok": false,
-            "error": "User not found." 
+            "error": "User not found."
                 // or "Incorrect password."
         }
-        
+
     }
 }
 ```
+
 <br>
 
 #### See Profile
@@ -126,11 +133,11 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-------: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
-| user | User | User account info | - |
+| Name  |  Type   |       Description        | Required |
+| :---: | :-----: | :----------------------: | :------: |
+|  ok   | Boolean |  check success or fail   |    ✔️    |
+| error | String  | message in case of error |    -     |
+| user  |  User   |    User account info     |    -     |
 
 <br>
 
@@ -157,6 +164,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -167,6 +175,7 @@ Fail
     }
 }
 ```
+
 <br>
 
 #### Edit Profile
@@ -186,10 +195,10 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-------: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
+| Name  |  Type   |       Description        | Required |
+| :---: | :-----: | :----------------------: | :------: |
+|  ok   | Boolean |  check success or fail   |    ✔️    |
+| error | String  | message in case of error |    -     |
 
 <br>
 
@@ -208,6 +217,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -218,6 +228,7 @@ Fail
     }
 }
 ```
+
 <br>
 
 #### Follow User
@@ -231,10 +242,10 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-------: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
+| Name  |  Type   |       Description        | Required |
+| :---: | :-----: | :----------------------: | :------: |
+|  ok   | Boolean |  check success or fail   |    ✔️    |
+| error | String  | message in case of error |    -     |
 
 <br>
 
@@ -253,6 +264,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -263,6 +275,7 @@ Fail
     }
 }
 ```
+
 <br>
 
 #### Unfollow User
@@ -276,10 +289,10 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-------: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
+| Name  |  Type   |       Description        | Required |
+| :---: | :-----: | :----------------------: | :------: |
+|  ok   | Boolean |  check success or fail   |    ✔️    |
+| error | String  | message in case of error |    -     |
 
 <br>
 
@@ -298,6 +311,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -308,6 +322,7 @@ Fail
     }
 }
 ```
+
 <br>
 
 #### See Followers
@@ -322,12 +337,12 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-------: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
-| followers | [User] | That user's follower list | - |
-| totalPages | Int | page count of followers  | - |
+|    Name    |  Type   |        Description        | Required |
+| :--------: | :-----: | :-----------------------: | :------: |
+|     ok     | Boolean |   check success or fail   |    ✔️    |
+|   error    | String  | message in case of error  |    -     |
+| followers  | [User]  | That user's follower list |    -     |
+| totalPages |   Int   |  page count of followers  |    -     |
 
 <br>
 
@@ -355,6 +370,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -365,6 +381,7 @@ Fail
     }
 }
 ```
+
 <br>
 
 #### See Followings
@@ -379,11 +396,11 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-------: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
-| followings | [User] | That user's following list | - |
+|    Name    |  Type   |        Description         | Required |
+| :--------: | :-----: | :------------------------: | :------: |
+|     ok     | Boolean |   check success or fail    |    ✔️    |
+|   error    | String  |  message in case of error  |    -     |
+| followings | [User]  | That user's following list |    -     |
 
 <br>
 
@@ -410,6 +427,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -420,6 +438,7 @@ Fail
     }
 }
 ```
+
 <br>
 
 #### Search User
@@ -433,11 +452,11 @@ Fail
 
 2️⃣ Response
 
-| Name | Type | Description | Required |
-| :----: | :-----: | :--------: | :-------: |
-| ok | Boolean | check success or fail | ✔️ |
-| error | String | message in case of error | - |
-| matchUser | [User] | matched user search result | - |
+|   Name    |  Type   |        Description         | Required |
+| :-------: | :-----: | :------------------------: | :------: |
+|    ok     | Boolean |   check success or fail    |    ✔️    |
+|   error   | String  |  message in case of error  |    -     |
+| matchUser | [User]  | matched user search result |    -     |
 
 <br>
 
@@ -461,6 +480,7 @@ Success
 ```
 
 Fail
+
 ```
 {
     "data": {
@@ -471,4 +491,25 @@ Fail
     }
 }
 ```
+
 <br>
+
+---
+
+## Folder Tree
+
+```
+📂user
+┣ 📂createAccount
+┣ 📂editProfile
+┣ 📂followUser
+┣ 📂login
+┣ 📂searchUser
+┣ 📂seeFollowers
+┣ 📂seeFollowings
+┣ 📂seeProfile
+┣ 📂unFollowUser
+┣ 📜user.resolvers.js
+┣ 📜user.typeDefs.js
+┗ 📜users.utils.js
+```

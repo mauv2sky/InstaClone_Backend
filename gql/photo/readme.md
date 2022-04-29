@@ -17,6 +17,7 @@
 -   [x] Delete Comment [▶️](#Delete-Comment)
 -   [x] See Photo Comments [▶️](#See-Photo-Comments)
 -   [x] See Hashtag [▶️](#See-Hashtag)
+-   ++ Folder Tree [▶️](#Folder-Tree)
 
 <br>
 
@@ -739,3 +740,27 @@ Fail
 ```
 
 <br>
+
+---
+
+## Folder Tree
+
+```
+📂photo
+┣ 📂createComment
+┣ 📂deleteComment
+┣ 📂deletePhoto
+┣ 📂editComment
+┣ 📂editPhoto
+┣ 📂likePhoto
+┣ 📂searchPhotos
+┣ 📂seeComments
+┣ 📂seeFeed
+┣ 📂seeHashtag
+┣ 📂seePhoto
+┣ 📂seePhotoLikes
+┣ 📂uploadPhoto
+┣ 📜photo.utils.js
+┣ 📜photos.resolvers.js
+┗ 📜photos.typeDefs.js
+```
