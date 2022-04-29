@@ -8,7 +8,7 @@
 
 ## Functions
 
-### [User](https://github.com/mauv2sky/InstaClone_Backend/tree/main/gql/User#Create-Account)
+### [User](https://github.com/mauv2sky/InstaClone_Backend/tree/main/gql/User)
 
 -   [x] Create Account
 -   [x] See Profile
