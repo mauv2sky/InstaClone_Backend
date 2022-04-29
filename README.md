@@ -1,5 +1,6 @@
 # Instagram Clone : Backend
 
+> -   Javascript
 > -   NodeJS, Express
 > -   GraphQL, Apollo, Prisma
 > -   http, webSocket
