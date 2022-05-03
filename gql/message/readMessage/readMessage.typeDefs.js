@@ -1,7 +1,7 @@
-import { gql } from "apollo-server-express";
+import { gql } from 'apollo-server-express';
 
 export default gql`
     type Mutation {
-        readMessage(id: Int): MutationResult!
+        readMessage(id: Int!): MutationResult!
     }
-`
+`;
