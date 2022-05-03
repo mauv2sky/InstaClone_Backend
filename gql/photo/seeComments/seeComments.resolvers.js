@@ -1,21 +1,33 @@
-import client from "../../../client"
+import client from '../../../client';
 
 export default {
     Query: {
-        seeComments: (_, { photoId, lastCmdId }) =>
-            client.comment.findMany({
+        seeComments: (_, { photoId, lastCmdId }) => {
+            const comments = client.comment.findMany({
                 where: {
-                    photoId
+                    photoId,
                 },
                 include: {
-                    user: true
+                    user: true,
                 },
                 skip: lastCmdId ? 1 : 0,
                 take: 10,
                 ...(lastCmdId && { cursor: { id: lastCmdId } }),
                 orderBy: {
-                    createdAt: "asc"
-                }
-            })
-    }
-}
+                    createdAt: 'asc',
+                },
+            });
+            if (!comments) {
+                return {
+                    ok: false,
+                    error: 'comments not exist.',
+                };
+            }
+
+            return {
+                ok: true,
+                comments,
+            };
+        },
+    },
+};

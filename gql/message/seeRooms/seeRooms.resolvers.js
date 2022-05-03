@@ -1,16 +1,21 @@
-import client from "../../../client";
+import client from '../../../client';
 
 export default {
     Query: {
-        seeRooms: (_, __, { loggedInUser }) =>
-            client.room.findMany({
+        seeRooms: (_, __, { loggedInUser }) => {
+            const rooms = client.room.findMany({
                 where: {
                     users: {
                         some: {
-                            id: loggedInUser.id
-                        }
-                    }
-                }
-            })
-    }
-}
+                            id: loggedInUser.id,
+                        },
+                    },
+                },
+            });
+
+            return {
+                rooms,
+            };
+        },
+    },
+};

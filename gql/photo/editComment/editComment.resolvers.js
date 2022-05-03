@@ -1,5 +1,5 @@
-import client from "../../../client";
-import { protectedResolver } from "../../user/users.utils";
+import client from '../../../client';
+import { protectedResolver } from '../../user/users.utils';
 
 export default {
     Mutation: {
@@ -7,28 +7,29 @@ export default {
             const comment = await client.comment.findUnique({
                 where: { id },
                 select: {
-                    userId: true
-                }
+                    userId: true,
+                },
             });
             if (!comment) {
                 return {
                     ok: false,
-                    error: "comment not found."
-                }
+                    error: 'comment not found.',
+                };
             } else if (comment.userId !== loggedInUser.id) {
                 return {
                     ok: false,
-                    error: "Not authorized."
-                }
+                    error: 'Not authorized.',
+                };
             } else {
                 await client.comment.update({
                     where: { id },
-                    data: { payload }
-                })
+                    data: { payload },
+                });
                 return {
-                    ok: true
-                }
+                    ok: true,
+                    comment,
+                };
             }
-        })
-    }
-}
+        }),
+    },
+};

@@ -1,7 +1,12 @@
-import { gql } from "apollo-server-express";
+import { gql } from 'apollo-server-express';
 
 export default gql`
-    type Query {
-        seeFeed: [Photo]
+    type seeFeedResult {
+        ok: Boolean!
+        error: String
+        photos: [Photo]
     }
-`
+    type Query {
+        seeFeed: seeFeedResult!
+    }
+`;

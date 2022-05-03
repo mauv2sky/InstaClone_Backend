@@ -1,41 +1,49 @@
-import client from "../../../client";
-import { protectedResolver } from "../../user/users.utils";
+import client from '../../../client';
+import { protectedResolver } from '../../user/users.utils';
 
 export default {
     Mutation: {
         createComment: protectedResolver(async (_, { photoId, payload }, { loggedInUser }) => {
             const photo = await client.photo.findUnique({
                 where: {
-                    id: photoId
+                    id: photoId,
                 },
                 select: {
-                    id: true
-                }
+                    id: true,
+                },
             });
             if (!photo) {
                 return {
                     ok: false,
-                    error: "Photo not found."
-                }
+                    error: 'Photo not found.',
+                };
             }
-            await client.comment.create({
+            const comment = await client.comment.create({
                 data: {
                     payload,
                     photo: {
                         connect: {
-                            id: photoId
-                        }
+                            id: photoId,
+                        },
                     },
                     user: {
                         connect: {
-                            id: loggedInUser.id
-                        }
-                    }
-                }
+                            id: loggedInUser.id,
+                        },
+                    },
+                },
             });
-            return {
-                ok: true
+
+            if (!comment) {
+                return {
+                    ok: false,
+                    error: 'comment not exist.',
+                };
             }
-        })
-    }
-}
+            return {
+                ok: true,
+                comment,
+            };
+        }),
+    },
+};

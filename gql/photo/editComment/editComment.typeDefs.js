@@ -1,7 +1,12 @@
-import { gql } from "apollo-server-express";
+import { gql } from 'apollo-server-express';
 
 export default gql`
-    type Mutation {
-        editComment(id: Int!, payload: String!): MutationResult!
+    type editCommentResult {
+        ok: Boolean!
+        error: String
+        comment: Comment
     }
-`
+    type Mutation {
+        editComment(id: Int!, payload: String!): editCommentResult!
+    }
+`;
