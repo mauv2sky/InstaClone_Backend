@@ -13,7 +13,7 @@ export default {
             if (!hashTag) {
                 return {
                     ok: false,
-                    error: 'hashtag not exist.',
+                    error: 'No results were found for your search.',
                 };
             }
 
